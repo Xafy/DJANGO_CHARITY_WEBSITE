@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}signup{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/log_form.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="login-container my-5" dir="ltr">
+  <div class="main-text">
+    انضم إلينا الآن
+  </div>
+  <div class="login-content my-5">
+    <form method="POST" action="#" class="login-form" onsubmit="return validate()">
+      {% csrf_token %}
+      
+      <img src="{% static 'img/avatar.svg' %}">
+      <h2 class="title">مرحبا</h2>
+      <p id="error"></p>
+
+      <div class="input-div one">
+        <div class="lock">
+          <i class="fas fa-at"></i>
+        </div>
+        <div class="div">
+          <h5>البريد</h5>
+          {{form.email}}
+          <i class="fa fa-times m_times"></i>
+          <i class="fa fa-check m_check"></i>
+        </div>
+      </div>
+      <div class="input-div one">
+        <div class="lock">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <h5>الاسم بالكامل </h5>
+          {{form.full_name}}
+          <i class="fa fa-times fn_times"></i>
+          <i class="fa fa-check fn_check"></i>
+        </div>
+      </div>
+      <div class="input-div one">
+        <div class="lock">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+          <h5>اسم الدخول</h5>
+          {{form.user_name}}
+          <i class="fa fa-times u_times"></i>
+          <i class="fa fa-check u_check"></i>
+        </div>
+      </div>
+
+      <div class="input-div pass">
+        <div class="lock">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+          <h5>الرمز السري</h5>
+          {{form.password}}
+          <i class="fa fa-times p_times"></i>
+          <i class="fa fa-check p_check"></i>
+        </div>
+      </div>
+      <div class="input-div pass">
+        <div class="lock">
+          <i class="fas fa-lock"></i>
+        </div>
+        <div class="div">
+          <h5>تأكيد الرمز السري</h5>
+          {{form.password_2}}
+          <i class="fa fa-times pc_times"></i>
+          <i class="fa fa-check pc_check"></i>
+        </div>
+      </div>
+
+      <input type="submit" class="btn" value="دخول">
+    </form>
+  </div>
+</div>
+
+{% block js %}<script src="{% static 'js/signup.js' %}"></script>{% endblock js %}
+
+{% endblock content %}

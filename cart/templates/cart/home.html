@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}cart{% endblock title %}
+
+{% block css %}{% endblock css %}
+
+{% block content %}
+
+
+<div class="container row">
+    <div class="col-12 col-md-9 mx-auto">
+    {% if cart.donations.exists %}
+        <table class="table cart-table">
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>donation Name</th>
+                <th>donation goal</th>
+                </tr>
+            </thead>
+            <tbody class='cart-body'>
+                {% for donation in cart.donations.all %}
+                <tr class='cart-product'>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td><a href='{{ donation.get_absolute_url }}'>{{ donation.title }}</a> 
+                        <span>{% include 'products/snippets/update_cart.html' with product=product cart=cart in_cart=True %}</span>
+                    </td>
+                    <td>{{ donation.goal }}</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="2"></td>
+                    <td><b>Total</b> $<span class='cart-total'>{{ cart.total }}</span></td>
+                </tr>
+                <tr>
+                <td colspan="2"></td>
+                {% comment %} <td><a class='btn btn-lg btn-success' href='{% url "cart:checkout" %}'>Checkout</a></td> {% endcomment %}
+                </tr>
+            </tbody>
+        </table>
+        {% else %}
+            <p class='lead'>Cart is empty</p>
+        {% endif %}
+    </div>
+</div>
+
+{% block js %}{% endblock js %}
+
+{% endblock content %}

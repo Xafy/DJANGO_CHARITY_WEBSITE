@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}dontaions_list{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/donation_card.css' %}">
+
+{% endblock css %}
+
+
+{% block content %}
+<div class='container  text-center p-5 pt-3'>
+    <div class ="m-2 mb-4">
+        <h4 class="mb-4 text-sm-right text-center container ">قائمة التبرعات</h3>
+        <hr width="50%" class=" text-center mx-auto bg-success">
+    </div>
+    <section id="donations-list">
+      <div class="container text-center ">
+        <div id="filters" class="button-group text-right font-baloo font-size-16 text-center">
+            <button class="btn border-left" data-filter="*">الجميع</button>
+          {% for tag in tags %}
+            <button class="btn border-left" data-filter=".{{tag.english_name}}">{{tag.name}}</button>
+          {% endfor %}
+        </div>                  
+        <div class='container mt-5'>
+          <div class="grid row row-cols-md-2 row-cols-lg-4  g-4">
+            {% for obj in donations %}
+            <div class="grid-item {{obj.tag.english_name}} col col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+              <a href="{% url 'donation:detail' pk=obj.pk %}" style="text-decoration:none; color:black;">
+               {% include 'donations/snippets/donation_card.html' with instance=obj%}
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+    </section>
+</div>
+
+{% block js %}
+<script src="{% static 'js/_donations_list.js' %}"></script>
+{% endblock js %}
+
+
+{% endblock content %}

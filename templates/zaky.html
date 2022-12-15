@@ -1,0 +1,578 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--   <link rel="stylesheet" href="css2/bootstrap.min.css">-->
+    
+        
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   
+        
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>احسب زكاتك</title>
+    
+      <link rel="stylesheet" href="{% static 'css/Calc.css' %}"/>   
+      <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+    
+        <script src="{% static 'js/wow.min.js' %}"></script>
+      
+        <script>
+          new WOW().init();
+        </script>      
+
+       
+       
+    
+    
+    
+    <script>
+    
+    function getval()
+        {
+        
+            
+            var n1= document.getElementById('text').value;
+            
+            var n= document.getElementById('text2').value=n1*0.0250;
+            
+            
+          alert(n)  ;
+            
+        }
+        
+        
+        
+        function getval1()
+       
+        {
+                    
+                
+            var m= document.getElementById('text3').value;            
+                
+            var m1= document.getElementById('text4').value;
+           
+            var m2=4;
+            var result= m*m1/m2;
+            
+            alert(result);
+            
+        }
+        
+        
+         function getval2()
+        
+           {
+                    
+                
+            var m= document.getElementById('text5').value;            
+                
+            var m1= document.getElementById('text6').value;
+           
+               var m2=4;
+               var result= m*m1/m2;
+               
+            alert(result);
+            
+          }
+        
+        
+        
+        
+            function getval3()
+       
+        
+           {
+                    
+                
+            var m= document.getElementById('text7').value;            
+                
+            var m1= document.getElementById('text8').value;
+          
+               var m2=4;
+               var result= m*m1/m2;
+               
+            alert(result);
+            
+             }
+        
+        
+            function getval4()
+       
+              {
+                    
+                
+                    var m= document.getElementById('text9').value;            
+                
+                    var m1= document.getElementById('text10').value;
+        
+                  var m2=4;
+                  var result= m*m1/m2;
+                  alert(result);
+            
+               }
+        
+        
+             function getval5()
+             
+                {
+                    
+                
+                    var m= document.getElementById('text11').value;            
+                
+                    var m1= document.getElementById('text12').value;
+                    var m2= document.getElementById('text13').value; 
+                    var m3= document.getElementById('text14').value; 
+            
+                   var m4=4;
+                   var x=m+m1;
+                  var y=m3+m2;
+                    
+                  var result= (x + y )/m4;
+                  alert(x) ;
+            
+                   }
+        
+        
+        
+    
+    
+    
+      </script>
+     
+    
+    
+    
+    
+        
+    
+    
+    
+</head>
+    
+
+
+                
+    <body>
+    
+    
+      
+    
+        
+    <div class="jumbotron">
+        
+       <div class="container">
+          
+          <h3 class="text-center   wow fadeInUpBig  "  id="rr" >احسب زكاتك بكل سهولة</h3>
+  
+        </div>
+        
+    
+    </div>
+        
+
+    
+    
+    <div class="container" id="er">
+        <div class="servicebx wow fadeInRightBig">
+            <div>
+                <img src="{% static 'img/zaky/money.png' %} " alt="">
+                <h2>المال</h2>
+            </div>
+        </div>
+        <div class="servicebx   ">
+
+            <div>
+                <img src="{% static 'img/zaky/ashm.png' %}" alt="">
+                <h2>الاسهم</h2>
+            </div>
+        </div>
+        <div class="servicebx ">
+
+            <div>
+                <img src="{% static 'img/zaky/company.png' %}" alt="">
+                <h2>الشركات</h2>
+            </div>
+        </div>
+        <div class="servicebx wow fadeInLeftBig ">
+
+            <div>
+                <img src="{% static 'img/zaky/gold.png' %}" alt=" ">
+                <h2>الذهب</h2>
+            </div>
+        </div>
+    </div>
+                
+        
+        <div class="box">
+        <div class="container" id="gj">
+        <div class="row  " id="rt">
+            
+               <div class="col-1 "> الدولة :</div>
+             <div class="col-5 ">
+                      <select class="custom-select"  style="border: 3px solid green"   >
+ 
+                         <option value="1">مصر</option>
+                         <option value="2">الامارات</option>
+                         <option value="3">الكويت</option>
+                         <option value="4">لبنان</option>
+                         <option value="5">الاردن </option>
+                         <option value="7">فلسطين</option>
+                            
+                      </select>
+
+            </div>
+        
+            
+            
+            
+             <div class="col-1">  العملة :</div>
+            <div class="col-5">
+                
+                <select class="custom-select"  style="border: 3px solid green" >
+                    
+                     <option selected>جنيه مصرى</option>
+                     <option value="1">دولار</option>
+                     <option value="2">ريال</option>
+                     <option value="3">دينار</option>
+                    
+                </select>
+                
+            </div>
+        
+            
+            
+         
+            
+            
+            </div>
+        
+        </div>
+        
+
+    
+        
+        <div class="box1">
+                <p class="text-center" id="gg" style="color: white" >احسب زكاة المال</p>
+        
+               <div class="container">
+                  <div class="row text-center">
+          
+                  
+                     <div class="col-4" style="color: white">الناتج</div>
+                      <div class="col-4">
+                          
+                       <input class="form-control  wow fadeInRightBig" type="text" id="text2"  style="border: 3px solid green" >
+                        <div class="col-4"></div>
+                          
+                      </div>
+                   
+                
+                 
+                  
+                  
+                  
+                    </div>
+              </div>
+        
+           <div class="container">
+              <div class="row text-center">
+                 
+                     <div class="col-4" style="color: white">المبلغ الذى تملكه</div>
+                  
+                  
+                  <div class="col-4">                  
+                      
+                         <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text" name="text" onclick="this.value=''" /  >
+                
+                  </div>
+                  
+                <div class="col-4"></div>
+                 
+                  
+                  
+                  
+               </div>
+            </div>
+            
+        
+        <button type="button" class="btn btn-sm" onclick="getval();">احسب</button>
+            
+          
+           <div style="border: 1px solid green ;"></div>
+        
+        
+    
+        
+          <p class="text-center" style="color: white">احسب زكاة الذهب</p>
+        
+        <div class="container">
+              <div class="row text-center">
+                  <div class="col-4" style="color: white">سعر الذهب</div>
+                  <div class="col-4">
+                      <input class="form-control wow fadeInRightBig" type="text" style="border: 3px solid green" id="text3" name="text" onclick="this.value=''" /  >
+                  </div>
+                   
+             
+                 
+                     <div class="col-4"></div>
+                  
+                  
+               </div>
+            
+        </div>
+        
+           <div class="container">
+              <div class="row text-center">
+                 <div class="col-4"style="color: white" ; >وزن الذهب</div>
+                  <div class="col-4">
+                       <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text4" name="text" onclick="this.value=''" /  >
+                  </div>
+                  
+                 
+                    <div class="col-4"></div>
+                  
+                  
+                    
+               </div>
+            
+            </div>
+            
+        <button type="button" class="btn btn-sm" onclick="getval1();">احسب</button>
+        
+        
+        
+        
+         <div style="border: 1px solid green;"></div>
+        
+        
+
+          <p class="text-center" id="jj" style="color: white">احسب زكاة ما تملك من الاسهم </p>
+        
+    
+            <div class="container">
+              <div class="row text-center">
+                    <div class="col-4" id="kk" style="color: white">عدد الاسهم </div>
+                  
+                  <div class="col-4">
+                     <input class="form-control wow fadeInRightBig" type="text" style="border: 3px solid green" id="text5" name="text" onclick="this.value=''" /  >
+                  </div>
+                  
+              <div class="col-4"></div>
+                 
+                  
+                  
+                  
+               </div>
+            </div>
+        
+           <div class="container">
+               
+              <div class="row text-center">
+                  <div class="col-4" style="color: white">سعر السهم </div>
+                  <div class="col-4">
+                    <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text6" name="text" onclick="this.value=''" /  >
+                     </div>
+                      <div class="col-4"></div>
+                 
+                 
+                  
+                  
+                  
+                </div>
+            </div>
+            
+              <button type="button" class="btn btn-sm" onclick="getval2();">احسب</button>
+        
+        
+    
+         
+         <div style="border: 1px solid green;"></div>
+        
+
+        
+          <p class="text-center" id="hh" style="color: white">احسب زكاة شركة </p>
+        
+        <div class="container">
+              <div class="row text-center">
+                  
+                  <div class="col-4" style="color: white"> عدد الاسهم بالشركة  </div>
+                 
+                     <div class="col-4">
+                        <input class="form-control wow fadeInRightBig" type="text" style="border: 3px solid green" id="text7" name="text" onclick="this.value=''" /  >
+                      </div>
+                  
+                 <div class="col-4"></div>
+                                   
+                  
+                  
+                </div>
+            
+          </div>
+        
+           <div class="container">
+               
+              <div class="row text-center">
+                  
+                  <div class="col-4" style="color: white"> سعر السهم </div>
+                  <div class="col-4">
+                    <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text8" name="text" onclick="this.value=''" /  >
+                  </div>
+                      <div class="col-4"></div>
+                 
+                                                     
+                  
+              </div>
+            
+            </div>
+            
+   <button type="button" class="btn btn-sm" onclick="getval3();">احسب</button>
+        
+        
+      
+         <div style="border: 1px solid green;"></div>
+        
+       
+        
+        
+          <p class="text-center" id="kk" style="color: white">احسب زكاة محصولك </p>
+        
+        <div class="container">
+              <div class="row text-center">
+                  <div class="col-4" style="color: white">الوزن  </div>
+                 
+                  <div class="col-4">
+                       <input class="form-control wow fadeInRightBig" type="text" style="border: 3px solid green" id="text9" name="text" onclick="this.value=''" /  >
+                  </div>
+                  
+                 <div class="col-4"></div>
+                 
+                  
+                  
+                  
+               </div>
+            
+          </div>
+        
+           <div class="container">
+              <div class="row text-center">
+                 <div class="col-4"style="color: white">سعر الكيلو الواحد </div>
+                  
+                  <div class="col-4">
+                     <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text10" name="text" onclick="this.value=''"  /  >
+                  </div>
+                  
+                 
+                        <div class="col-4"></div>
+                  
+                  
+                  
+              </div>
+               
+                <button type="button" class="btn btn-sm" onclick="getval4();">احسب</button>
+        
+        
+        
+            </div>
+            
+         <div style="border: 1px solid GREEN";></div>
+               
+        
+        
+        
+          <p class="text-center" style="color: white" >احسب زكاة ما تملك من الانعام </p>
+        
+        <div class="container">
+              <div class="row text-center">
+                    <div class="col-4" style="color: white"> عدد الابل </div>
+                 
+               
+                  <div class="col-4">
+                             
+                    <input class="form-control wow fadeInRightBig" type="text" style="border: 3px solid green" id="text11" name="text" onclick="this.value=''" / > 
+                  
+                  </div>
+                  <div class="col-4"></div>
+                  
+                  
+                 
+               </div>
+            </div>
+        
+           <div class="container">
+              <div class="row text-center">
+                    <div class="col-4" style="color: white">عدد الابقار </div>
+                 
+                     <div class="col-4">
+                            <input class="form-control  wow fadeInRightBig" type="text" style="border: 3px solid green" id="text12" name="text" onclick="this.value=''" / >
+                  
+                     </div>
+                  
+                     <div class="col-4"></div>
+                 
+                                    
+                  
+                  </div>
+            </div>
+        
+        
+           <div class="container">
+              <div class="row text-center"> 
+                        <div class="col-4"style="color: white">عدد الاغنام </div>  
+                
+                  <div class="col-4">
+                      
+                       <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text13" name="text" onclick="this.value=''" / >
+                      
+                  </div>
+                  
+                   <div class="col-4"></div>
+                 
+                  
+                  
+                  
+               </div>
+            
+            </div>
+        
+           <div class="container">
+              <div class="row text-center">
+                   <div class="col-4" style="color: white">سعر الواحدة منهم  </div>
+                  
+                  <div class="col-4">
+                        <input class="form-control wow fadeInLeftBig" type="text" style="border: 3px solid green" id="text14" name="text" onclick="this.value=''" / >
+                  </div>
+                  
+                  <div class="col-4"></div>
+                 
+                  
+                  
+                  
+              </div>
+              
+         <button type="button" class="btn btn-sm" onclick="getval5();">احسب</button>
+               
+            </div>
+        
+    </div>
+    </div>
+    
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                
+    
+    </body>
+</html>
+

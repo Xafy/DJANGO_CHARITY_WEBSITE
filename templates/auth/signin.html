@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}signin{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/log_form.css' %}">
+{% endblock css %}
+
+
+
+{% block content %}
+
+<div class="login-container" dir="ltr">
+		<div class="main-text">
+			مرحبا بعودتك
+		</div>
+		<div class="login-content">
+			<form method='POST' id="form" class="login-form" onsubmit="return validate()">
+                {% csrf_token %}
+				<img src="{% static 'img/avatar.svg' %}">
+				<h2 class="title">مرحبا</h2>
+				<p id="error"></p>
+				<div class="input-div one">
+					<div class="lock">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+					<h5>البريد</h5>
+                        {{form.email}}
+						<i class="fa fa-times u_times"></i>
+						<i class="fa fa-check u_check"></i>
+					</div>
+				</div>
+				<div class="input-div pass">
+					<div class="lock">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>الرمز السري</h5>
+						{{form.password}}
+						<i class="fa fa-times p_times"></i>
+						<i class="fa fa-check p_check"></i>
+					</div>
+				</div>
+                
+				<a href="#" class="help">نسيت الرمز السري؟</a>
+				<a href="{% url 'signup' %}" class="help">مستخدم جديد؟</a>
+				<input type="submit" class="btn" value="دخول">
+			</form>
+		</div>
+	</div>
+
+{% block js %}<script src="{% static 'js/signin.js' %}"></script>{% endblock js %}
+ 
+{% endblock content %}

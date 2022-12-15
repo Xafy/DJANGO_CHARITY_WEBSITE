@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap');
+
+
+/* banner */
+.banner .item{
+    height :90vh;
+    background-size:cover;
+}
+
+.banner .item img{
+    z-index: -200;
+    height: 100%;
+    width: 100%;
+    background-color: black;   
+}
+
+.banner .caption{
+    position: absolute;
+    top:50%;
+    right:20%;
+    transform: translateY(-50%);
+    
+}
+
+.banner .caption .title{
+   font-size: 90px;
+   color: rgb(255, 255, 255);
+   border-color: black;
+   font-family: "Almarai", "sans-serif";
+   text-align: right;
+   -webkit-text-fill-color: white;
+   -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+   text-shadow: rgb(0, 0, 0);
+   font-weight: bolder;
+   display:inline-block;
+   opacity: 1;
+
+}
+.banner .caption .desc{
+   color: rgb(255, 255, 255);
+   font-family: "Almarai", "sans-serif";
+   text-align: right;
+   -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+   font-size: 50px;
+   font-weight: bold;
+   margin: 20px 0px 10px;
+
+}
+
+.banner .owl-dots{
+    position: absolute;
+    z-index: 100;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.banner .owl-dots button.owl-dot{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin: 0px 3px;
+    outline: none;
+}
+
+.banner .owl-dots button.owl-dot.active{
+    background: #fff;
+}
+
+.banner .owl-nav button.owl-prev,.banner .owl-nav button.owl-next{
+    width: 50px;
+    height: 50px;
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+    position: absolute;
+    top: 50%;
+    text-indent: -60%;
+    overflow: hidden;
+    outline: none;
+    opacity: 0.5;
+    transition: all ease 0.5s;
+}
+
+.banner  .owl-nav button.owl-prev{
+    left: 30px;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.banner  .owl-nav button.owl-next{
+    right: 30px;
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.banner:hover .owl-nav button.owl-prev{
+    left: 60px;
+}
+
+.banner:hover .owl-nav button.owl-next{
+    right: 60px;
+}

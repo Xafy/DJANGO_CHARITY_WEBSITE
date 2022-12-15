@@ -1,0 +1,252 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body,
+input,
+textarea {
+  font-family: "Almarai", "sans-serif";
+}
+
+.gap {
+  padding: 60px 0;
+  position: relative;
+}
+.right-widget {
+  display: table;
+  float: none;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  width: 80%;
+  position: static !important;
+}
+.user-widget {
+  background-color: white;
+  border: 2px solid #1abc9c;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 15px;
+}
+.your-page > figure {
+  margin: auto;
+  display: block;
+  max-width: 55px;
+  width: 50%;
+  padding: 10px 0 0 0;
+}
+.your-page > figure > a > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.user-meta > a {
+  display: inline-block;
+  text-decoration: none;
+  color: #0639c4;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  padding: 4px;
+}
+.bio-title {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+.bio {
+  width: 100%;
+  padding: 20px;
+  padding-top: 2px;
+}
+.user-meta > row {
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+  text-align: center;
+  color: #233e8b;
+  background-image: linear-gradient(to right, #004040 , #3c8299);
+  padding: auto;
+  border: 1px solid #a9f1df;
+  border-radius: 16px;
+  width: auto;
+}
+.banner > ul {
+  list-style-type: none;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.post {
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+  border: 2px solid #1abc9c;
+}
+
+.post__image img {
+  width: 100%;
+}
+
+.post__top {
+  display: flex;
+  position: relative;
+
+  padding: 15px;
+}
+
+.post__avatar {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+
+  margin-left: 2px;
+}
+.post__topInfo h3 {
+  font-size: medium;
+}
+.post__topInfo h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post__topInfo p {
+  font-size: small;
+  color: gray;
+}
+
+.post__bottom {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  padding: 0px 15px 1px 15px;
+}
+
+.post__options {
+  padding-top: 10px;
+
+  border-radius: inherit;
+
+  display: flex;
+  justify-content: space-evenly;
+  font-size: medium;
+
+  padding: 15px;
+  background-color: #5ac8a3;
+}
+
+.post__option {
+  display: flex;
+
+  justify-content: center;
+  padding: 5px;
+}
+.post__option.right {
+  width: 57%;
+
+  text-align: center;
+}
+.post__option.left {
+  width: 60%;
+  border-right: 1px solid #0639c4;
+  text-align: center;
+}
+.post__option a {
+  display: block;
+  text-decoration: none;
+  color: rgb(3, 0, 43);
+}
+.post__option a :active {
+  color: rgb(10, 105, 30);
+}
+.upvote {
+  margin-right: 3px;
+}
+
+.post__option p {
+  margin-left: 10px;
+}
+img.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #1f7963;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: 1px solid #063330;
+  cursor: pointer;
+  border-radius: 13px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+color: white;
+  background-image: linear-gradient(to right, #004040 , #005a5a);
+  min-width: 80px;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
+  z-index: 1;
+  border-radius: 10px;
+  padding: 9px;
+  font-size: large;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: #000614;
+  text-decoration: none;
+  font-size: large;
+}
+
+/* Change color of dropdown links on hover */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #06553d;
+}
+.info {
+  padding: 0rem;
+  margin: 0rem;
+}
+button.dropbtn.ss {
+  padding-right: 14px;
+  padding-left: 14px;
+}

@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}how to donate{% endblock title %}
+
+{% block content %}
+<div class="m-2 text-center">
+    <h2 class="m-3">كيف تتبرع</h2>
+</div>
+<div class "container row mt-5">
+    <div class " col-12 col-md-8 my-5 py-5">
+        <div class = "text-center m-3 mt-5 ">
+            <h3>أولا : قم بإنشاء حساب </h3>
+            <h5>قم بوضع (بريدك الالكتروني , اسمك الكامل , اسم المستخدم , كلمة السر ، تكرار كلمة السر)</h5>
+            <img src="{% static 'img/how/signup.png' %}" style="width:50%;" alt ="signup pic">
+        </div>
+
+        <div class = "text-center m-3">
+            <h3>ثانيا : قم بتسجيل دخولك </h3>
+            <h5>ادخل كلمة السر والبريد الالكتروني</h5>
+            <img src="{% static 'img/how/signin.png' %}" style="width:50%;" alt ="signin pic">
+        </div>
+
+        <div class = "text-center m-3">
+            <h3>ثالثا : اختر حالة تبرع من هنا </h3>
+            <h5>قم بالضغط على حالة التبرع</h5>
+            <img class="img-fluid" src="{% static 'img/how/donation-list.png' %}" style="width:50%;" alt ="post">
+        </div>
+
+        <div class = "text-center  m-3">
+            <h3>رابعا : أرسل رسالة نصية </h3>
+            <h5>قم باستعمال هاتفك المحمول لإرسال رسالة نصية تحتوى على التفاصيل امامك</h5>
+            <img src="{% static 'img/how/donation-detail.png' %}" style="width:50%;" alt ="comment-post">
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="card my-5" style="margin-top : 5 rem;">
+    <div class="card-body text-center">
+        
+        <div class="ico ">
+            {%if instance.avatar_thumbnail%}
+            <img src="{{instance.avatar_thumbnail.url}}" alt="{{instance.name}}" class="img-fluid">
+            {% else %}
+            <img src = "img/default.jbg" class="card-img-top img-fluid" alt="image not found">
+            {%endif%}
+        </div>
+
+        <div class="text-center">
+            <h3 class="text-center">{{instance.name}}</h3>
+            <p class="text-center" style="word-spacing: 1px; padding: 5px;">{{instance.bio|truncatewords:10}}</p>
+        </div>
+        
+        <div class="d-flex flex-row  justify-content-center  justify-content-evenly">
+            <a href="#"> <i class="fab fa-facebook  "></i> </a>
+            <a href="#"> <i class="fab fa-twitter "></i> </a>
+            <a href="#"> <i class="fab fa-google-plus "></i> </a>
+        </div>
+        <!-- card body-->
+    </div>
+    <!-- card -->
+</div>

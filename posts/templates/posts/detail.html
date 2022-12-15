@@ -1,0 +1,132 @@
+{%extends 'layout.html'%}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+{% endblock css %}
+{%block content%}
+
+
+<div class="theme-layout">
+        <section>
+            <div class="gap gray-bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row" id="page-contents">
+                                <div class="col-lg-3">
+
+                                </div><!-- sidebar -->
+                                <div class="col-lg-6">
+
+                                    <div class="loadMore">
+                                        <div class="central-meta item">
+                                            <div class="user-post">
+                                                <div class="post">
+                                                    <div class="post__top">
+													{% if post.publisher_org %}
+                                                        {% if post.publisher_org.avatar_thumbnail %}
+                                                          <img  src="{{ post.publisher_org.avatar_thumbnail.url }}" alt="s" style="width: 50px; height: 50px; border-radius: 25px;">  
+                                                        {% else %}
+                                                          <img  src="{% static 'img/default2.png' %}" alt="s" style="width: 50px; height: 50px; border-radius: 25px;">                                                          
+                                                        {% endif %}														<div class="post__topInfo">
+                                                            <h3 class="px-2"> <a href="#" title="">{{post.publisher_org.name}}</a> </h3>
+                                                            <p class="px-2" dir="ltr">{{post.created_at|timesince}}</p>
+                                                        </div>
+														<span></span>
+													{% else %}
+                                                        {% if post.publisher_user.avatar_thumbnail %}
+														<img class="user__avatar post__avatar" src="{{ post.publisher_user.avatar_thumbnail.url }}" alt="s" style="width: 50px; height: 50px; border-radius: 25px;">
+                                                        {% else %}
+														<img class="user__avatar post__avatar" src="{% static 'img/default' %}" alt="s" style="width: 50px; height: 50px; border-radius: 25px;">
+                                                        {% endif %}
+														<div class="post__topInfo">
+                                                            <h3 class="px-2"> <a href="#" title="">{{post.publisher_user.user_name}}</a> </h3>
+                                                            <p class="px-2" dir="ltr">{{post.created_at|timesince}}</p>
+                                                        </div>
+													{% endif %}
+                                                    </div>
+                                                    <div class="post__bottom">
+                                                        <p>{{post.content}}</p>
+                                                    </div>
+
+                                                    <div class="post__options">
+                                                        <div class="post__option right">
+                                                        {%if request.user.is_authenticated%}
+														{%if post.id not in ids%}
+                                                            <a href="{%url 'posts:upvote' id=post.id%}">
+                                                                <span>تصويت</span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%else%}
+															<a href="{%url 'posts:unvote' id=post.id%}">
+                                                                <span>الغاء التصويت
+                                                                </span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%endif%}
+														{%endif%}
+                                                        </div>
+
+                                                        <div class="post__option left">
+                                                            <a href="#">التعليقات</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="coment-area">
+                                                        <ul class="we-comet">
+														{%for comment in comments%}
+                                                            <li>
+                                                                <div class="comment-info">
+                                                                {% if comment.publisher_user.avatar_thumbnail %}
+                                                                    <a href="#"><img src="{{ comment.publisher_user.avatar_thumbnail.url }}"
+                                                                            alt=""></a>                                                                
+                                                                {% else %}
+                                                                    <a href="#"><img src="{% static 'img/default.png' %}"
+                                                                            alt=""></a> 
+                                                                {% endif %}
+
+                                                                    <div class="coment-head">
+                                                                        <h5><a class="px-2" href="#" title="">{{comment.publisher_user.user_name}}</a>
+                                                                        </h5>
+                                                                        <p class="px-2" dir="ltr">{{comment.created_at|timesince}}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="we-comment">
+                                                                    <p>{{comment.content}}</p>
+                                                                </div>
+                                                            </li>
+                                                            <hr>
+														{% endfor %}
+                                                        </ul>
+
+														{%if request.user.is_authenticated%}
+															<form method='post' action="{%url 'posts:create_comments' id=post.id%}" class="form-comment">
+																{% csrf_token %}
+																<textarea name="comment" rows="1"
+																	placeholder="اكتب تعليقك"></textarea>
+																<input type="submit" name="submit comment" value="تعليق" class="cmnt-btn">
+															</form>
+														{%endif%}
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{%endblock content%}
+
+{% block js %}
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock js %}

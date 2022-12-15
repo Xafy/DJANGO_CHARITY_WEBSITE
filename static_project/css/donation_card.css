@@ -1,0 +1,75 @@
+.card {
+    border: 0;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background: rgb(252, 247, 247);
+}
+
+
+.bill {
+    height: 250px;
+    background-image: url(../images/خلفيه.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.bill h4 {
+    background: #004040;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 10px;
+    width: 200px;
+    padding-right: 15px;
+    color: rgb(218, 208, 190);
+}
+
+.card .card-body .detail {
+    border: 0;
+    box-shadow: 0 2px 6px 0 hsla(0, 0%, 0%, .2);
+    border-radius: 10px;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    padding: 0;
+    margin-top: -50px;
+    height: 80px;
+    text-align: right;
+}
+
+.card a button {
+    align-items: flex-start;
+    border-radius: 20px;
+    width: 100px;
+}
+
+.card .topleft {
+    position: absolute;
+    left: 0px;
+    top: 320px;
+    color: rgb(81, 178, 207);
+}
+
+.card .topright {
+    position: absolute;
+    right: 0px;
+    top: 320px;
+}
+/* icons */
+
+.ico {
+    width: 200px;
+    height: 200px;
+}
+
+.ico a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(37, 48, 44);
+}
+
+.ico a img {
+    border: 3px solid rgb(75, 82, 80);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

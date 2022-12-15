@@ -1,0 +1,33 @@
+<div class=" card h-100 ">
+    <div class="bill" style="background-image: url(
+        {%if instance.image%}
+        {{instance.image.url}}
+        {% else %}
+        products/image-not-found.jbg
+        {%endif%}
+    );">
+        <h4>{{instance.title}}</h4>
+    </div>
+    <div class="card-body">
+        <div class="detail p-2 ">
+            <p class="card-text text-md-center">{{instance.description|truncatewords:10}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="pt-5 text-md-center">
+        <div class="   topleft" style="width: 148px;">
+            <h4 class="text-md-center">{{instance.tag}}</h4>
+            {% comment %} <h4 class="text-md-center">{{instance.org.avatar_thumbnail}}</h4> {% endcomment %}
+            <img src="{{instance.org.logo.url}}" style="width: 50px;" alt="{{instance.org}}">
+        </div>
+        <div class="topright" style="width: 148px;">
+            <h4>هدفنا </h4>
+            <h3>{{instance.goal}}</h3>
+        </div>
+    </div>
+    <hr class="mt-4 mx-2">
+    <div class="mb-3">
+        <a href="org.html " class="text-center p-4 mb-2"><button class="btn btn-outline-info  ">تفاصيل</button></a>
+    </div>
+
+</div>

@@ -1,0 +1,16 @@
+.ico {
+    width: 70px;
+    height: 70px;
+}
+
+.ico a {
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(37, 48, 44);
+}
+
+.ico a img {
+    border: 3px solid rgb(75, 82, 80);
+    border-radius: 50%;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,111 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/_donation_request.css' %}">
+{% endblock css %}
+
+{% block title %}request donation{% endblock title %}
+
+{% block content %}
+<div class="container mainpage">
+      <span class="big-circle"></span>
+      <img src="{% static 'assets/shape.png' %}" class="square" alt="" />
+      <!-- here is the form where the user applies his case  -->
+      <div class="form">
+        <!-- our contact information  -->
+
+        <div class="contact-info" dir="rtl">
+          <h3 class="title">قدم مشكلتك لدينا</h3>
+          <p class="text">
+            يمكنك تقديم طلب هنا و سوف نقوم بمراجعته و إرساله إلى الجمعية المختصة للنظر فيه.
+          </p>
+
+
+          <div class="info">
+            <div class="information">
+              <img src="{% static 'img/location.png' %}" class="icon" alt="" />
+              <p>Lorem, ipsum dolor.</p>
+            </div>
+            <div class="information">
+              <img src="{% static 'img/email.png' %}" class="icon" alt="" />
+              <p>lorem@ipsum.com</p>
+            </div>
+            <div class="information">
+              <img src="{% static 'img/phone.png' %}" class="icon" alt="" />
+              <p>123-456-789</p>
+            </div>
+          </div>
+
+
+          <div class="social-media">
+            <p>تواصل معنا</p>
+            <div class="social-icons">
+              <a href="#">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- our contact information  -->
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+          <!-- form field  -->
+          <form id="form" autocomplete="off" dir="rtl" novalidate method="POST">
+            {% csrf_token %}
+            <h3 class="title">قدم هنا</h3>
+            <div class="input-container">
+              <input type="text" name="name" id="name" class="input" required />
+              <label for="name">اسمك</label>
+              <span>اسمك</span>
+            </div>
+            <div class="input-container">
+              <input type="email" id="mail" name="mail" required minlength="8" class="input" required />
+
+              <label for="mail" z>بريدك الإلكتروني</label>
+              <span>بريدك الإلكتروني</span>
+            </div>
+
+            <div class="input-container">
+              <input type="tel" name="phone" pattern="^01[0-2,5]\d{8}$" id="phone" class="input" required/>
+              <label for="phone">رقم التواصل</label>
+              <span>رقم التواصل</span>
+            </div>
+            <div class="input-container textarea">
+              <textarea name="message" id="message" class="input" required></textarea>
+              <label for="message">التفاصيل</label>
+              <span dir="rtl">التفاصيل</span>
+            </div>
+            <label for="cases" class="cases"> اختر نوع الحالة</label>
+
+            <div class="input-container">
+
+              <select name="cases" id="cases" class="cases">
+
+                <option value="water">ماء</option>
+                <option value="food">طعام</option>
+                <option value="cloth">ملابس</option>
+                <option value="other">أخرى</option>
+
+              </select>
+            </div>
+            <input type="submit" value="إرسال" class="btn" />
+          </form>
+          <!-- form field  -->
+ 
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/donation_request.js' %}"></script>
+{% endblock js %}

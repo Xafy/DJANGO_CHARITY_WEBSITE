@@ -1,0 +1,220 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}community{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/_community.css' %}">
+{% endblock css %}
+
+{% block content %}
+{% if request.user.is_authenticated %}
+    <div class="theme-layout">
+        <section>
+            <div class="gap gray-bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row" id="page-contents">
+                                <div class="col-lg-3">
+                                    <aside class="right-widget">
+                                        <div class="user-widget text-center">
+
+                                            <div class="your-page">
+                                                <figure>
+                                                    {% if request.user.avatar_thumbnail %}
+                                                        <a href="{% url 'accounts:profile' slug=request.user.slug%}" title=""><img src="{{request.user.avatar_thumbnail.url}}" alt=""></a>
+                                                    {% else %}
+                                                        <a href="{% url 'accounts:profile' slug=request.user.slug%}" title=""><img src="{% static 'img/default.png' %}" alt=""></a>
+                                                    {% endif %}
+                                                </figure>
+                                                <div class="user-meta">
+                                                    <a href="#" title="">{{request.user.user_name}} </a>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <h6 class="bio-title">
+                                                                معلومات
+                                                            </h6>
+                                                            <p class="bio">{{request.user.bio}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="page-widget">
+                                            <div class="banner">
+                                                <img src="{% static 'img/default2.png' %}" alt="Snow" style="width:100%;">
+                                                <div class="centered"> <span><a href="#">قم بإنشاء جمعية</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                </div><!-- sidebar -->
+                                <div class="col-lg-6">
+                                    <div class="central-post">
+                                        <div class="new-postbox">
+                                            <div class="newpst-input">
+											{% if request.user.is_authenticated %}
+                                                <form method="post" action="{% url 'posts:publish_user' slug=request.user.slug %}">
+                                                    {% csrf_token %}
+													<textarea rows="2" placeholder="اكتب منشورك" name='text'></textarea>
+                                                    <button type="submit" name="submit">انشر</button>
+                                                </form>
+											{%endif%}
+                                            </div>
+                                        </div>
+                                    </div><!-- add post new box -->
+                                    <ul class="filter">
+                                        <li class="list active" data-filter="organization">جمعيات</li>
+                                        <li class="list" data-filter="users">مستخدمين</li>
+                                    </ul>
+									<div class ="m-0 p-0">
+										<a class="order-link px-1 border-right" href="{%url 'posts:recent'%}">حسب التوقيت</a>
+										<a class="order-link px-1 border-left" href="{%url 'posts:mostvotes'%}">حسب الأصوات</a>
+									</div>
+                                    <div class="loadMore ">
+                                        <div class="central-meta item">
+										{%for post in org_posts%}
+                                            <div class="user-post itemBox organization">
+                                                <div class="post">
+                                                    <div class="post__top">
+                                                        {% if post.publisher_org.avatar_thumbnail  %}
+                                                            <a href="{% url 'org:detail' slug=post.publisher_org.slug%}"> <img class="user__avatar post__avatar"
+                                                            src="{{post.publisher_org.avatar_thumbnail.url}}" alt="" /></a>
+                                                        {% else %}
+                                                            <a href="{% url 'org:detail' slug=post.publisher_org.slug%}"> <img class="user__avatar post__avatar"
+                                                            src="{% static 'img/default.png' %}" alt="" /></a>
+                                                        {% endif %}
+                                                        <div class="post__topInfo">
+                                                            <h3 class="px-2"> <a href="#" title="">{{post.publisher_org.name}}</a> </h3>
+                                                            <p class="px-2" dir="ltr">{{post.created_at|timesince}}.</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="post__bottom">
+                                                        <p>{{post.content}}</p>
+                                                    </div>
+
+                                                    <div class="post__options">
+                                                        <div class="post__option right">
+														{%if request.user.is_authenticated%}
+														{%if post.id not in ids%}
+                                                            <a href="{%url 'posts:upvote' id=post.id%}">
+                                                                <span>تصويت</span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%else%}
+															<a href="{%url 'posts:unvote' id=post.id%}">
+                                                                <span>الغاء التصويت
+                                                                </span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%endif%}
+														{%endif%}
+														</div>
+														
+                                                        <div class="post__option left">
+                                                            <a href="{% url 'posts:detail' id=post.id %}">التعليقات</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+										{% endfor %}
+
+										{%for post in user_posts%}
+                                            <div class="user-post itemBox  users">
+                                                <div class="post">
+                                                    <div class="post__top">
+                                                    {% if post.publisher_user.avatar_thumbnail %}
+                                                        <a href="{% url 'accounts:profile' slug=post.publisher_user.slug%}"> <img class="user__avatar post__avatar"
+                                                        src="{{post.publisher_user.avatar_thumbnail.url}}" alt="" /></a>
+                                                    {% else %}
+                                                        <a href="{% url 'accounts:profile' slug=post.publisher_user.slug%}"> <img class="user__avatar post__avatar"
+                                                        src="{% static 'img/default.png' %}" alt="" /></a>
+                                                    {% endif %}
+                                                        <div class="post__topInfo">
+                                                            <h3 class="px-2"> <a href="#" title="">{{post.publisher_user.user_name}}</a> </h3>
+                                                            <p class="px-2" dir="ltr">{{post.created_at|timesince}}</p>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="post__bottom">
+                                                        <p>{{post.content}}</p>
+                                                    </div>
+
+                                                    <div class="post__options">
+                                                        <div class="post__option right">
+														{%if request.user.is_authenticated%}
+														{%if post.id not in ids%}
+                                                            <a href="{%url 'posts:upvote' id=post.id%}">
+                                                                <span>تصويت</span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%else%}
+															<a href="{%url 'posts:unvote' id=post.id%}">
+                                                                <span>الغاء التصويت
+                                                                </span>
+																<span>({{post.get_votes}})</span>
+                                                            </a>
+														{%endif%}
+														{%endif%}
+                                                        </div>
+
+                                                        <div class="post__option left">
+                                                            <a href="{% url 'posts:detail' id=post.id %}">التعليقات</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+										{% endfor %}
+                                        </div>
+                                    </div>
+                                </div><!-- centerl meta -->
+                                <div class="col-lg-3">
+                                    <aside class="left-widget">
+                                        <div class="side-nav">
+                                            <h4 class="widget-title">اختصارات</h4>
+                                            <ul>
+                                                <li><i class="fas fa-home"></i>
+                                                    <a href="{% url 'community'%}">الرئيسية</a>
+                                                </li>
+                                                <li> <i class="fas fa-edit"></i>
+                                                    <a href="{% url 'accounts:edit' slug=request.user.slug %}">تعديل حسابي</a>
+                                                </li>
+                                                <li><i class="fas fa-leaf"></i>
+                                                    <a href="{% url 'org:user-orgs' slug=request.user.slug%}">مؤسساتي</a>
+                                                </li>
+                                                <li> <i class="fas fa-plus"></i>
+                                                    <a href="{% url 'org:create' %}">إنشاء مؤسسة</a>
+                                                </li>
+                                                <li><i class="fas fa-sign-out-alt"></i>
+                                                    <a href="{% url 'logout' %}">تسجيل الخروج </a>
+                                                </li>
+
+                                            </ul>
+
+                                        </div>
+
+
+                                    </aside>
+                                </div><!-- sidebar -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+	</div>
+{% else %}
+
+<h1>ينبغي عليك تسجيل دخولك أولا</h1>
+
+<img src="{% static 'img/error.jpeg' %}"
+
+{% endif %}
+{% block js %}<script src="{% static 'js/_community.js' %}"></script>{% endblock js %}
+
+{% endblock content %}
+
+

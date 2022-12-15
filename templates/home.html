@@ -1,0 +1,107 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}home{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/donation_card.css' %}">
+<link rel="stylesheet" href="{% static 'css/home0.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<!--Banner Owl-carousel -->
+<section id="banner-area" class="m-0" >
+    <div class="banner owl-carousel m-0">
+        <div class="item slide1" >
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/banner1.png' %}" alt="">
+                <div class="caption">
+                    <div class="title">هنساعد</div>
+                    <div class="desc">نهدف لتجميع أيادي الخير في مكان واحد</div>
+                </div>
+            </a>
+        </div>
+        <div class="item slide2" >
+            <a href="{% url 'community' %}">
+                <img src="{% static 'img/banner3.png' %}" alt="">
+                <div class="caption">
+                    <div class="title">مجتمعنا</div>
+                    <div class="desc">تواصل مع محبي الخير على منصة تواصلنا الاجتماعي</div>
+                </div>
+            </a>
+        </div>
+        <div class="item slide3">
+            <a href="{% url 'donation:list' %}">
+                <img src="{% static 'img/banner22.jpeg' %}" alt="">
+                <div class="caption">
+                    <div class="title">تبرع الأن</div>
+                    <div class="desc"> تصفح جميع حالات التبرع الأن وشارك في الخير</div>
+                </div>
+            </a>
+        </div>
+</section>
+<!-- !Owl-carousel -->
+</div>
+
+
+<section >
+    <div class ="p-4">
+        <h4 class="mb-4 text-sm-right text-danger text-center container wow flash ">حالات حرجة
+            <div class="spinner-grow" role="status">
+                <span class="sr-only text-danger">Loading...</span>
+            </div>
+        </h4>
+        <p class=" text-center text-danger wow slideInUp "> حالات تحتاج المساعده في اسرع وقت ممكن </p>
+        <hr width="50%" class=" text-center text-light mx-auto bg-success">
+    </div>
+    <section id="Emergency" class="my-5">
+        <div class="container text-center">
+            <div class="owl-carousel owl-theme text-center">
+                {% for obj in donations %}
+                <div class='item '>
+                <a href="{% url 'donation:detail' pk=obj.pk %}" style="text-decoration:none; color:black;">
+                {% include 'donations/emergency.html' with instance=obj%}
+                </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</section>
+
+{% comment %} <section id="blog" class="my-5">
+    <div class="container row mx-auto">
+        <div class="col-5 row mx-auto border">
+            <div class="col-3 ">
+                <img "img-fluid" src="{% static 'img/cahr2.jpg' %}" >
+                </img>
+            </div>
+            <div class="col-7 mx-auto">
+                <h3 class="mt-3">طهر روحك</h3>
+                <p>
+                عش هذه الحياة واعمل فيها جاهداً أن يستفيد من وجودك أكبر عدد من الناس
+                ، فإذا فعلت ذلك، تجلّت نواياك، وتطهّرت روحك، وطابت نفسك.
+                </p>
+            </div>
+        </div>
+        <div class="col-5 row mx-auto border">
+            <div class="col-3 ">
+                <img class="img-fluid" src="{% static 'img/char.jpg' %}" >
+                </img>
+            </div>
+            <div class="col-7 mx-auto">
+                <h3 class="mt-3">اكسب ثوايا</h3>
+                <p>
+                ذّكر نفسك بأنك تتاجِر مع الله وليس مع البشر،
+                 والبشر هم أسباب وضعها الله في طريقك لتكون أفضل وأطهر نفسياً وروحياً.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</section> {% endcomment %}
+{% endblock content %}
+
+
+{% block js %}<script src="{% static 'js/_home.js' %}"></script>{% endblock js %}

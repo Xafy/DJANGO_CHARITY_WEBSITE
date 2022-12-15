@@ -1,0 +1,110 @@
+{%extends 'layout.html'%}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/edit_form.css' %}">
+{% endblock css %}
+
+{%block content%}
+
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-8 mx-auto mx-4 my-3">
+    <div class="bg-light shadow  mb-5 bg-body border m-2 ">
+      <div class="edit-container">
+        <h1 class=" titlez">تعديلات</h1>
+        <div class=" content">
+          <form method="post" enctype="multipart/form-data" action="#" onsubmit="return validate()">
+            {% csrf_token %}
+            <div class="org-details">
+              <p id="error"></p>
+
+              <div class="input-box">
+                <span class="details"> البريد </span>
+                <i class="fa fa-times m_times"></i>
+                <i class="fa fa-check m_check"></i>
+                {{form.email}}
+              </div>
+
+              <div class="input-box">
+                <span class="details">الاسم بالكامل </span>
+                <i class="fa fa-times fn_times"></i>
+                <i class="fa fa-check fn_check"></i>
+                {{form.full_name}}
+              </div>
+
+              <div class="input-box">
+                <span class="details">اسم الدخول</span>
+                <i class="fa fa-times u_times"></i>
+                <i class="fa fa-check u_check"></i>
+                {{form.user_name}}
+              </div>
+
+              {% comment %} <div class="input-box">
+                <span class="details">الرمز السري </span>
+                <i class="fa fa-times p_times"></i>
+                <i class="fa fa-check p_check"></i>
+                <input name="password" type="password" id="password">
+              </div>
+
+              <div class="input-box">
+                <span class="details">تأكيد الرمز السري</span>
+                <i class="fa fa-times pc_times"></i>
+                <i class="fa fa-check pc_check"></i>
+                <input name="confirm-password" type="password" id="pass-conf">
+              </div> {% endcomment %}
+
+              <div class="input-box">
+                <span class="details"> معلومات</span>
+                <i class="fa fa-times b_times"></i>
+                <i class="fa fa-check b_check"></i>
+                {{form.bio}}
+              </div>
+
+
+
+              <div class=" ">
+                <label for="pic" class="org-pic">
+                  <div class="mx-2"> اختر صورة حسابك
+                    <i class="fas fa-image "></i>
+                  </div>
+                  {{form.avatar_thumbnail}}
+                </label>
+                
+              </div>
+
+
+              <div class="input-box">
+                <span class="details"> التواصل</span>
+                <i class="fa fa-times d_times"></i>
+                <i class="fa fa-check d_check"></i>
+                {{form.contact_information}}
+              </div>
+
+              <div class="input-box">
+                <span class="details"> العنوان</span>
+                <i class="fa fa-times l_times"></i>
+                <i class="fa fa-check l_check"></i>
+                {{form.location}}
+              </div>
+
+            </div>
+
+            <div class="button">
+              <input type="submit" value="تأكيد التعديلات">
+            </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% comment %} <form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Update">
+</form> {% endcomment %}
+{%endblock%}
+

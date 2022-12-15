@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}how to donate{% endblock title %}
+
+{% block content %}
+<div class="m-2 text-center">
+    <h2 class="m-3">كيف تشارك في مجتمعنا</h2>
+</div>
+<div class "container row mt-5">
+    <div class " col-12 col-md-8 my-5 py-5">
+        <div class = "text-center m-3 mt-5 ">
+            <h3>أولا : قم بإنشاء حساب </h3>
+            <h5>قم بوضع (بريدك الالكتروني , اسمك الكامل , اسم المستخدم , كلمة السر ، تكرار كلمة السر)</h5>
+            <img src="{% static 'img/how/signup.png' %}" style="width:50%;" alt ="signup pic">
+        </div>
+
+        <div class = "text-center m-3">
+            <h3>ثانيا : قم بتسجيل دخولك </h3>
+            <h5>ادخل كلمة السر والبريد الالكتروني</h5>
+            <img src="{% static 'img/how/signin.png' %}" style="width:50%;" alt ="signin pic">
+        </div>
+
+        <div class = "text-center m-3">
+            <h3>ثالثا : يمكنك الأن نشر بوست </h3>
+            <h5>قم بكتابة محتوى المنشور داخل المساحة الخالية ثم قم بالضغط على أنشر</h5>
+            <img class="img-fluid" src="{% static 'img/how/community-home.png' %}" style="width:50%;" alt ="post">
+        </div>
+
+        <div class = "text-center  m-3">
+            <h3>رابعا : التعليق والتصويت </h3>
+            <h5>يمكنك التعليق عن طريق المساحة الخالية بالأسفل ثم الضغط على زر التعليق</h5>
+            <h5>يمكنك التصويت أو الغاء التصويت عن طريق زر التصويت</h5>
+            <img src="{% static 'img/how/post-detail.png' %}" style="width:50%;" alt ="comment-post">
+        </div>
+    </div>
+</div>
+{% endblock content %}

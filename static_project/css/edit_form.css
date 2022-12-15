@@ -1,0 +1,186 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,
+input,
+textarea {
+  font-family: "Almarai", "sans-serif";
+}
+.cart-div {
+  padding: 0.5rem;
+}
+body {
+  overflow-x: hidden;
+}
+.bg-all {
+  background-color: aliceblue;
+}
+
+.bg-seconed-green {
+  background-color: #005a5a;
+}
+
+.bg-primary-green {
+  background: #004040;
+  background-color: #004040;
+}
+
+.light-text {
+  color: rgb(245, 248, 247);
+}
+
+.text-primary-green {
+  color: #004040;
+}
+
+#main-site {
+  margin-top: 3.9rem;
+}
+
+footer {
+  bottom: 0;
+}
+
+.footer-icons i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a .fab {
+  color: rgb(255, 255, 255);
+  font-size: 40px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.edit-container {
+  width: 100%;
+  background-image: linear-gradient(to right, #32be8f, #38d39f, #0c7451);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.content form .org-details {
+  margin: 20px 0 12px 0;
+  color: white;
+}
+form .org-details .input-box {
+  margin-bottom: 15px;
+}
+form .input-box span.details {
+  display: block;
+  margin-bottom: 10px;
+  font-size: larger;
+}
+.org-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 30px;
+  padding-right: 15px;
+  border: 1px solid #005a5a;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.org-details .input-box input[type="file"] {
+  display: none;
+}
+.org-details .input-box textarea {
+  height: 100px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 15px;
+  border: 1px solid #005a5a;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  resize: none;
+  overflow: hidden;
+}
+.org-pic {
+  color: white;
+  background-color: #004040;
+  border-radius: 20px;
+  margin: auto;
+  height: 60px;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #005a5a;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0px;
+  margin-right: 30%;
+}
+form .button input {
+  height: 100%;
+  width: 60%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #005a5a, #004040);
+}
+form .button input:hover {
+  background: linear-gradient(135deg, #075f53, #005a5a);
+}
+.input-box > .fa {
+  float: left;
+  display: none;
+}
+.fa-times {
+  color: red;
+  margin-left: 2px;
+}
+.fa-check {
+  color: green;
+}
+.titlez {
+  text-align: center;
+}
+#error {
+  color: red;
+  padding: 10px;
+  text-align: center;
+}
+@media (max-width: 584px) {
+  .content form .org-details {
+    max-height: 1000px;
+  }
+  form .button {
+    height: 45px;
+    margin: 70px 0px;
+    margin-right: 30%;
+  }
+}

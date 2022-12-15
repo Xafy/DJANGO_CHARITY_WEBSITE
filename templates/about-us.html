@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"   >
+ {% load static %}
+    <head>      
+     
+       <meta charset="UTF-8" />
+         
+       <title>about us</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">   
+          
+                     
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">  
+               <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+        
+        
+        
+        
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+        
+        
+        
+        
+        
+        
+        
+<!--
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
+    
+-->
+     
+       <link rel="stylesheet" href="{% static 'css/about_.css' %}" />      
+       <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+       <link rel="stylesheet" href="{% static 'css/layout0.css' %}">      
+      
+        
+        <script src="{% static 'js/wow.min.js' %}"></script>
+      
+        <script>
+             new WOW().init();
+        </script> 
+ 
+   </head>  
+
+  <body>
+     
+<!-- start #header -->
+<header id="header">
+  <div class="fixed-top">
+    <div class=" cart-div bg-seconed-green ">
+    </div>
+    <!-- Primary Navigation -->
+    <nav class="navbar p-1 navbar-dark light-text navbar-expand-lg bg-primary-green  ">
+      <div class="container ">
+        <a class="navbar-brand  " href="{% url 'home' %}"><img src="{% static 'img/white_logo.png' %}" alt="logo" style="width : 6rem; hieght:3rem;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item  ">
+              <a class="nav-link light-text " href="{% url 'home' %}">الرئــيسيــة<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle light-text " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                المساعدة
+              </a>
+              <div class="dropdown-menu bg-primary-green" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item light-text" href="{% url 'org:list' %}">جهات المساعدة</a>
+                <a class="dropdown-item light-text" href="{% url 'donation:list' %}">قدم مساعدة</a>
+                <a class="dropdown-item light-text" href="{% url 'donation:request' %}">اطلب مساعدة</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link light-text" href="{% url 'community' %}">مجتمعنا</a>
+            </li>  
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle light-text" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ارشادات
+              </a>
+              <div class="dropdown-menu bg-primary-green" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item light-text" href="#">كيف تتبرع</a>
+                <a class="dropdown-item light-text" href="#">كيف تطلب المساعدة</a>
+                <a class="dropdown-item light-text" href="#">كيف تشارك في مجتمعنا</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item light-text" href="#">احسب زكاتك</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link light-text" href="#">من نحن؟</a>
+            </li>          
+          </ul>
+          <a class="nav-link light-text" href="{%url 'signin'%}">تسجيل الدخول</a>
+        </div>
+      </div>
+    </nav>
+<!-- !Primary Navigation -->
+  </div>
+</header>
+<!-- !end #header -->
+
+
+<!-- start #main-site -->
+    <main id="main-site" class="bg-all">
+      
+    </main>
+<!-- !end #main-site -->
+
+      
+      <div class="jumbotron" id="cc">
+
+          <div class="te">
+              
+                 <h3 class= "text-center wow fadeInDownBig data-wow-duration="4s"   " id="jak"  > من نحن  </h3>
+
+          </div>
+      </div>
+
+      <div class="rr">
+
+          <div class="row text-center" id="cm">       
+               <div class="text-center" id="vfv">
+             
+                  <i class="fas fa-people-carry    wow fadeInUpBig"></i>
+            
+               </div>
+            
+            <h3 class= "text-center wow flip data-wow-duration="6s"  " >هنساعد </h3>
+         
+          </div>  
+  
+          <p  class="text-center    wow bounceIn data-wow-duration="4s" " id="vbb"> موقع ويب الكترونى يضم اكثر من جمعيه خيرية ذات اهمية فى مجتمعنا حيث تتكاتف جميع الجمعيات من محتلف الاماكن لتسهيل عمليه التبرع والوصول باسرع وقت ممكن  لتوفير الدعم بانواعه لا توجد اى رسوم على الموقع   
+            
+          
+          </p>
+
+      </div>
+      
+      
+      <div class="row text-center">
+          
+           <div class="col-1"></div>
+          
+          <div class="col-3">
+                <i class="far  fa-2x fa-eye wow fadeInRightBig  data-wow-offset="100" " id="pp"></i>
+                <p>رؤيتنا</p>
+                <p >من خلال منصتنا نتطلع الى أن تكون منصة خيرية واحدة على الإنترنت ، يمكن من خلالها تقديم المساهمات من خلال توسيع قاعدة المانحين للقضايا الاجتماعية من خلال الاستخدام الفعال للتكنولوجيا والموارد
+
+                </p>
+          </div>
+          
+          
+          <div class="col-1"></div>
+          
+          <div class="col-2">
+               <i class="fas fa-2x fa-user-cog  wow fadeInDownBig  data-wow-offset="100" "></i>
+                  <p>نهجنا</p>
+               <p> الوصول الى مستحقى التبرع كما نعلم لا توجد اى رسوم على المنصه او نسبه مئوية من الاموال الماخوذه من التبرعات نريد مساعدة المساجد والكنائس والجمعيات الخيرية وكل محتاج فى الحصول على اكبر قدر ممكن من الدعم مع جعل الامر سهلا واكثر امانا للمانحين</p>
+          </div>
+          
+           <div class="col-1"></div>
+          
+          <div class="col-3">
+               <i class="fas fa-2x fa-bullseye wow fadeInLeftBig  data-wow-offset="100"   "></i>
+                  <p>هدفنا</p>
+               <p> الاهداف هى اداة ضرورية لقياس النجاح ولذلك نهدف الى تقديم تقنيات اتصال مبتكرة وقدرات فعالة لجمع التبرعات كل ذلك فى نظام واحد متكامل يجعل من السهل على المؤيدين جمع التبرعات </p>
+          </div>
+          
+      </div>
+
+
+      <div class="mm  wow fadeInUpBig data-wow-duration="12s"  ">
+          
+          <p class="text-center " id="mm"> لماذا تحتاج المنظمات إلى موقع إلكتروني للتبرع ؟ </p>
+
+      </div>
+
+
+    <div class="container">
+
+     <div class="row">
+        <div class="col-4">
+            
+           <div class="card wow fadeInRightBig">
+                 <div class="sides left-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                    <h1 class="name">العطاء</h1>
+                    <h3 class="profession"> الطوارئ </h3>
+                </div>
+               
+               <div class="sides right-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                  <h1 class="name">يوفر </h1>
+                  <h3 class="profession">  فى حالات </h3>
+              </div>
+               
+              <div class="back-side" style="background-image : url({% static 'img/about/kkk.jpeg' %});">                  
+                  <p class="biography">
+                     "يقدم مجموعة من الميزات المتطورة التي تضيف إلى تجربة جمع التبرعات عبر الإنترنت. يتضمن ذلك القدرة على الاحتفاظ برصيد في حساب العطاء ، ويكون جاهزًا للتوزيع في يوم آخر. هذا يعني أن نداء الطوارئ أو حملتك الموسمية قد تجذب أولئك الذين يستخدمون حساب العطاء بهذه الطريقة يوفر العطاء فى حالات االطوارئ مع الحالات الحرجة التى قد يؤثر مرور الوقت عليها بشكل سلبى "
+                  </p>
+               </div>
+               
+            </div>
+            
+          </div>
+
+        <div class="col-4">
+            
+         <div class="card">
+              <div class="sides left-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                   <h1 class="name">تسجيل</h1>
+                   <h3 class="profession">التبرعات</h3>
+              </div>
+              <div class="sides right-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                     <h1 class="name">يتم</h1>
+                   <h3 class="profession">جميع</h3>
+              </div>
+               <div class="back-side" style="background-image : url({% static 'img/about/kkk.jpeg' %});">
+                 <p class="biography">
+                     "استخدام منصة لجمع التبرعات يعني أن جميع التبرعات مسجلة. يمكنك أن ترى في الوقت الفعلي بعدك عن هدفك ، والمبلغ الذي تم جمعه ، ومن ساهم. يساعد هذا في تتبع جميع التبرعات ومواكبة الإجمالي الحالي وتوجيه التبرعات بالاولويه والدقة المطلوبة وذلك يتم عن طريق تسجيل كل عملية تبرع تتم من خلال الموقع بالبيانات اللازمه له"
+                 </p>
+               </div>
+         </div>
+            
+        </div>
+
+
+        <div class="col-4">
+                 <div class="card   wow fadeInLeftBig">
+                     
+                   <div class="sides left-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                     <h1 class="name">الى</h1>
+                     <h3 class="profession">جدد</h3>
+                  </div>
+                     
+                  <div class="sides right-side" style="background-image : url({% static 'img/about/card-bg.jpg' %});">
+                      <h1 class="name">الوصول</h1>
+                      <h3 class="profession">مؤيدين</h3>
+                 </div>
+                     
+                 <div class="back-side" style="background-image : url({% static 'img/about/kkk.jpeg' %});">
+                <p class="biography">
+                   "ميزة أخرى لامتلاك صفحة تبرع عبر الإنترنت هي قدرة المؤيدين الجدد على التعرف على قضيتك. في الواقع ، تعد منشورات وسائل التواصل الاجتماعي واحدة من أفضل الطرق لبناء الوعي"
+                   </p>
+                </div>
+             </div>
+        </div>
+        </div>
+      </div>    
+
+         <div class="jumbotro" id="sc" >
+
+                  <div class="bb wow bounceInDown">
+                      
+                      
+                      <h5 class=" text-center" id=gg  > اهتمامتنا تشمل الصحه والتعليم وكبار السن والبيئة والاغراض الخاصه   </h5>
+
+                      </div>
+       <div class="row text-center  " id="vvvv">
+                 <div class="col-2"id="vvvv">
+                      <i class="fas fa-users wow fadeInLeftBig"></i>
+                 </div>
+           
+                  <div class="col-2 "id="vvvv">
+                      <i class="fab fa-envira wow fadeInLeftBig" ></i>
+                 </div>
+           
+                  <div class="col-2 " id="vvvv">
+                     <i class="fab fa-accessible-icon"></i>
+                 </div>
+           
+                 <div class="col-2" id="vvvv">
+                        <i class="fas fa-university  wow fadeInRightBig"></i>
+                 </div>
+           
+                  <div class="col-2" id="vvvv">
+                     <i class="fas fa-school"></i>
+                 </div>
+           
+                 <div class="col-2 "id="vvvv">
+                     <i class="fas fa-heartbeat wow fadeInRightBig"></i>
+                </div>
+        </div>
+
+      </div>
+      
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container" dir="rtl">
+      <div class="service-top">
+        <h1 class="section-title">خدم<span>ا</span>تنا</h1>
+        <p class="text-center">نحاول تقديم حلول وطرق جديدة ومفيدة لتسهيل عمل الخير عن طريق
+        موقعنا الذي يجمع مختلف الجمعيات الخيرية في مكان واحد</p>
+      </div>
+      <div class="service-bottom">
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>عرض حالات للتبرع</h2>
+          <p class="text-center " >نقوم بعرض الحالات التي تريدها الجمعيات حتى يتصفحها الأعضاء</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>قبول التبرعات</h2>
+          <p class="text-center">يتم التبرع للحالات عن طريق الدفع الالكتروني والرسائل النصية</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>استقبال طلبات التبرع</h2>
+          <p class="text-center">نستقبل طلبات التبرع التي يقدمها المحتاجين عن طريق الموقع</p>
+        </div>
+        <div class="service-item">
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" /></div>
+          <h2>مجتمعنا</h2>
+          <p class="text-center">يتم التواصل بين الجمعيات واعضاء الموقع عن طريق منصة التواصل المدمجة في الموقع</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+      
+ 
+<div class="jumbotron" id="scv" >
+    
+          <h3 class ="text-center wow slideInDown" >    لست متاكد من اين تبدأ ؟ دعنا نساعدك </h3>
+    
+      <div class="row text-center" >
+    
+        <div class="col-4" id="vbn" ><i class="fas fa-phone-square-alt wow rotateIn"></i></div>
+        <div class="col-4   " id="vbn"><i class="fas fa-tools wow rotateIn   "></i></div>
+        <div class="col-4" id="vbn"><i class="fas fa-calculator wow rotateIn"></i></div>
+    
+      </div >
+      
+              <div class="row text-center"> 
+                 <div class="col-4"><button type="button" class="btn btn-outline-success" id="dhd">الاتصال</button></div>
+                  <div class="col-4"><button type="button" class="btn btn-outline-success"id="dhd">اتصل بالدعم </button></div>
+                  <div class="col-4"><button type="button" class="btn btn-outline-success "id="dhd">اطلب اقتباس</button></div>
+      
+              </div >
+</div>
+      
+      
+    <div class="container1 m-5 " >
+
+        <div class="card1 shadow"  style=" border-radius: 20px; padding: 20px 15px; border: 0;box-shadow: 0 2px 6px 0 rgba(148, 51, 51, 0.2);">
+            <div style="background:#004040 ; color: white; border-radius: 10px; text-align: center;">
+                <h1 class="mt-3">أسئلة متكررة</h1>
+
+            </div>
+            <div class="accordion accordion-flush  m-2" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            ما هو هنساعد  وما اهم اهدافه  ؟ </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>وموقعنا (هنساعد) عبارة عن موقع ويب إلكتروني يضم اكثر من جمعيه خيريه ذات أهميه فى مجتمعنا حيث تتكاتف جميع الجمعيات من مختلف الأماكن لتسهيل عمليه التبرع والوصول بأسرع وقت ممكن لتوفير الدعم بأنواعه
+<!--
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">- سرعه الوصول للحالات </li>
+                                    <li class="list-group-item">- مساعده اكبر قدر ممكن من الناس</li>
+                                </ul>
+-->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            كيف يعمل موقع التبرعات المجانية الخاصة بنا   ؟ </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p> و موقعنا يهتم باستضافة الجمعيات ذات الأهمية في المجتمع وعرض الحالات الخاصه بكل جمعية والوصول الى الحالات الأكثر احتياجا وتوجية المانحين لها وايصال متلقى التبرع الذى لم يسبق اضافته لاى جمعيه بالجمعية الأقرب له وذلك عبر تحديد
+                                الموقع الخاص به الذى من خلاله يتم اضافه حالته الى الجمعية الأقرب له من حيث الموقع الجعرافى
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            للإقتراح علينا بإضافه جديده </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+                                نحن نرحب دائما بالاقتراحات ونتشوق لسماعها عن طريق
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            من مزايا هنساعد  ؟ </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingfive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
+                            من مزايا هنساعد  ؟ </button>
+                    </h2>
+                    <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingsix">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapsesix">
+                            كيف يعمل موقع التبرعات المجانية الخاصة بنا   ؟ </button>
+                    </h2>
+                    <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p> و موقعنا يهتم باستضافة الجمعيات ذات الأهمية في المجتمع وعرض الحالات الخاصه بكل جمعية والوصول الى الحالات الأكثر احتياجا وتوجية المانحين لها وايصال متلقى التبرع الذى لم يسبق اضافته لاى جمعيه بالجمعية الأقرب له وذلك عبر تحديد
+                                الموقع الخاص به الذى من خلاله يتم اضافه حالته الى الجمعية الأقرب له من حيث الموقع الجعرافى
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+</div>
+      <div class="row" id="cvc">
+                 
+                   <div class="col-6" id="we">
+                       
+                    <div class="nmn">
+                        
+                          <p class="text-center" style="color: rgb(7, 14, 7)" id="dc">  فريقنا</p>    
+                          <p class="text-center"> <u> مجدى محمد </u></p> 
+                          <p class="text-center"> <u>   محمد عادل بدير عبد المعطى </u></p>  
+                          <p class="text-center"> <u> محمد عبد الشافى</u></p> 
+                          <p class="text-center"> <u> عمرو شدو</u></p> 
+                          <p class="text-center"> <u> محمود نهرو</u></p> 
+                          <p class="text-center"> <u> محمد ابراهيم</u></p> 
+                          <p class="text-center "> <u>  عبد الله احمد</u></p> 
+                          <p class="text-center "> <u> ناصر الطامى </u></p>
+                          <p class="text-center "> <u> محمد علاء</u></p> 
+                         
+                       </div>  
+                    
+                    
+                    </div>
+                          <div class="col-6" id="sd">
+                             <img src="{% static 'img/about/gggggg.jpg' %}" class="ccc" alt="">   
+                              <h4 style="color white" class="text-center">2021 هنساعد</h4>
+                              <h6 class="text-center " id="fvv" > تحت اشراف</h6>
+                              <p class="text-center" id="gjj">  دكتور جون فايز</p>  
+                        
+                          </div>
+                  </div>
+                
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div class="text-center" id="oo">
+        <h1 class="section-title">معلومات <span> التواصل</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+             <div class="contact-info">
+            <h1>رقم الهاتف</h1>
+            <h2>+1 234 123 1234</h2>
+            <h2>+1 234 123 1234</h2>
+              
+          </div>
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/phone.png" /></div>
+         
+        </div>
+        <div class="contact-item">
+            <div class="contact-info">
+                <h1>البريد  <span>الالكترونى</span></h1>
+            <h2>info@gmail.com</h2>
+            <h2>abcd@gmail.com</h2>
+          </div>
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
+          
+        </div>
+        <div class="contact-item">
+             <div class="contact-info">
+            <h1>العنوان</h1>
+            <h2>المنصورة, الدقهلية , مصر</h2>
+          </div>
+          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/map-marker.png" /></div>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+
+     
+<!-- Footer -->
+<footer class="footer">
+    <div class="container-fluid bg-primary-green p-4">
+    <div class="row light-text p-4">
+      <div class="col-12 col-md-6 col-lg-3 mx-auto">
+        <div class="text-center">
+          <a class="text-left navbar-brand  " href="{% url 'home' %}"><img src="{% static 'img/white_logo.png' %}" alt="logo" style="width : 8rem; hieght:5rem;"></a>
+          <div class="text-center footer-links p-3"> 
+            <p>
+            هذا الموقع قام بإنشائه وتطويره فريق من كلية الهندسة
+            بجامعة المنصورة بهدف مساعدة المحتاجين في كل مكان
+            </p>
+          </div>
+          <div class=" footer-company-name">HANSAED &copy; 2021</div>
+        </div>
+      </div>
+
+      <div class="col-12  col-md-6 col-lg-3 mx-auto">
+        <div class="footer-icons" dir="">
+          <div>
+            <i class="fa fa-map-marker"></i>
+            <span id="vx">الدقهلية, مصر</span> 
+          </div>
+        </div> 
+        
+        <div class="footer-icons" dir="">
+          <div>
+            <i class="fa fa-phone"></i>
+            <span id="cx">+1 555 123456</span>
+          </div>
+        </div> 
+        
+        <div class="footer-icons" dir="">
+          <div>
+            <i class="fa fa-envelope"></i> 
+            <span><a href="HANSAED@gmail.com">HANSAED@gmail.com</a></span>
+          </div>
+        </div> 
+      </div>
+      
+      <div class="col-12 col-md-6 col-lg-3 mx-auto">
+        <div class="text-center my-2 py-4"><h3>تابعنا على</h3></div>
+        <div class=" text-center">
+          <a href="#"><i class="fab fa-facebook "></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+</footer>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
+  </body>
+</html>
