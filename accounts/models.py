@@ -93,7 +93,7 @@ class User(AbstractBaseUser):
 							    				default='/img/default.png',
                                                 processors=[ResizeToFill(300, 300)],
                                                 format='JPEG',
-                                               options={'quality': 60})
+                                                options={'quality': 60})
     contact_information     = models.TextField(blank=True, null=True)
     location                = models.TextField(blank=True, null=True)                                        
     phone                   = models.CharField(max_length=245, blank=True, null=True)
